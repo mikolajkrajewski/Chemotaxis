@@ -15,14 +15,13 @@ import java.io.IOException;
 public class Chemotaxis extends PApplet {
 
 Bacteria [] jediKnights;
-int r,g,b;
  public void setup()   
  {     
- 	size(300,300);  
- 	jediKnights = new Bacteria[10];
+ 	size(600,600);  
+ 	jediKnights = new Bacteria[20];
  	for(int i = 0; i<jediKnights.length; i++)
  	{
- 		jediKnights[i] = new Bacteria(150,150);
+ 		jediKnights[i] = new Bacteria(300,300);
  	}
  }   
  public void draw()   
@@ -36,26 +35,24 @@ int r,g,b;
  }  
  class Bacteria    
  {     
- 	int myX, myY;
+ 	int myX, myY, myColor;
  	Bacteria(int x, int y)
  	{
  		myX = x;
  		myY = y;
- 		//r = (int)(Math.random()*256);
- 		//b = (int)(Math.random()*256);
- 		//g = (int)(Math.random()*256);
+ 		myColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
  	}
  	public void show()
  	{
  		strokeWeight(5);
- 		stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+ 		stroke(myColor);
  		noFill();
- 		ellipse(myX,myY,20,20);
+ 		ellipse(myX,myY,25,25);
  	}
  	public void move()
  	{
- 		myX = myX + (int)(Math.random()*5)-2;
- 		myY = myY + (int)(Math.random()*5)-2;
+ 		myX = myX + (int)(Math.random()*7)-3;
+ 		myY = myY + (int)(Math.random()*7)-3;
  	}
  }    
   static public void main(String[] passedArgs) {
