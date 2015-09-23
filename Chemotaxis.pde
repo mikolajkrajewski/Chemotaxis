@@ -13,13 +13,25 @@ Predator jango;
  void draw()   
  {    
    background(0);
-   for(int i = 0; i<jediKnights.length; i++)
+   if(mousePressed == true)
    {
-     jediKnights[i].move();
-     jediKnights[i].show();
+     for(int i = 0; i<jediKnights.length; i++)
+     {
+       jediKnights[i].move();
+       jediKnights[i].show();
+     }
+     jango.predMove();
+     jango.predShow();
    }
-   jango.predMove();
-   jango.predShow();
+   else
+   {
+     fill(255);
+     textAlign(CENTER);
+     textSize(25);
+     text("Click the mouse for a scare.",300,275);
+     text("Hold the mouse if you're brave.",300,300);
+     text("The goal is the not get caught.",300,325);
+   }
  }  
  class Bacteria    
  {     
@@ -41,19 +53,19 @@ Predator jango;
    {
      if(myX < mouseX)
      {
-       myX += (int)(Math.random()*2);
+       myX += (int)(Math.random()*4);
      }
      else
      {
-       myX += (int)(Math.random()*2)-1;
+       myX += (int)(Math.random()*5)-4;
      }
      if(myY < mouseY)
      {
-       myY += (int)(Math.random()*2);
+       myY += (int)(Math.random()*4);
      }
      else
      {
-       myY += (int)(Math.random()*2)-1;
+       myY += (int)(Math.random()*5)-4;
      }
    }
  }    
