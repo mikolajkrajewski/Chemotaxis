@@ -15,8 +15,8 @@ import java.io.IOException;
 public class Chemotaxis extends PApplet {
 
 Bacteria [] jediKnights;
-Predator jango;
- public void setup()   
+Food jango;
+public void setup()   
  {     
    size(600,600);  
    jediKnights = new Bacteria[200];
@@ -24,7 +24,7 @@ Predator jango;
    {
      jediKnights[i] = new Bacteria((int)(Math.random()*600),(int)(Math.random()*600));
    }
-   jango = new Predator(mouseX,mouseY);
+   jango = new Food(mouseX,mouseY);
  }   
  public void draw()   
  {    
@@ -36,8 +36,8 @@ Predator jango;
        jediKnights[i].move();
        jediKnights[i].show();
      }
-     jango.predMove();
-     jango.predShow();
+     jango.foodMove();
+     jango.foodShow();
    }
    else
    {
@@ -85,25 +85,25 @@ Predator jango;
      }
    }
  }    
- class Predator
+ class Food
  {
-   int mypX, mypY, mypColor;
-   Predator(int pX, int pY)
+   int myfX, myfY, myfColor;
+   Food(int pX, int pY)
    {
-     mypX = pX;
-     mypY = pY;
-     mypColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+     myfX = pX;
+     myfY = pY;
+     myfColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
    }
-   public void predShow()
+   public void foodShow()
    {
      noStroke();
-     fill(mypColor);
-     ellipse(mypX,mypY,50,50);
+     fill(myfColor);
+     ellipse(myfX,myfY,50,50);
    }
-   public void predMove()
+   public void foodMove()
    {
-     mypX = mouseX + (int)(Math.random()*7)-3;
-     mypY = mouseY + (int)(Math.random()*7)-3;
+     myfX = mouseX + (int)(Math.random()*7)-3;
+     myfY = mouseY + (int)(Math.random()*7)-3;
    }
  }
   static public void main(String[] passedArgs) {
