@@ -3,12 +3,13 @@ Food jango;
 void setup()   
  {     
    size(600,600);  
-   jediKnights = new Bacteria[200];
+   jediKnights = new Bacteria[100];
    for(int i = 0; i<jediKnights.length; i++)
    {
      jediKnights[i] = new Bacteria((int)(Math.random()*600),(int)(Math.random()*600));
    }
    jango = new Food(mouseX,mouseY);
+   frameRate(960);
  }   
  void draw()   
  {    
@@ -53,19 +54,19 @@ void setup()
    {
      if(myX < mouseX)
      {
-       myX += (int)(Math.random()*7);
+       myX += (int)(Math.random()*3);
      }
      else
      {
-       myX += (int)(Math.random()*7)-6;
+       myX += (int)(Math.random()*3)-2;
      }
      if(myY < mouseY)
      {
-       myY += (int)(Math.random()*7);
+       myY += (int)(Math.random()*3);
      }
      else
      {
-       myY += (int)(Math.random()*7)-6;
+       myY += (int)(Math.random()*3)-2;
      }
    }
  }    
