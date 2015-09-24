@@ -69,19 +69,19 @@ public void setup()
    {
      if(myX < mouseX)
      {
-       myX += (int)(Math.random()*4);
+       myX += (int)(Math.random()*7);
      }
      else
      {
-       myX += (int)(Math.random()*5)-4;
+       myX += (int)(Math.random()*7)-6;
      }
      if(myY < mouseY)
      {
-       myY += (int)(Math.random()*4);
+       myY += (int)(Math.random()*7);
      }
      else
      {
-       myY += (int)(Math.random()*5)-4;
+       myY += (int)(Math.random()*7)-6;
      }
    }
  }    
